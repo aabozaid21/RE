@@ -1,0 +1,41 @@
+﻿
+@model IEnumerable<RE.Models.User>
+@{
+    ViewBag.Title = "search";
+    Layout = null;
+}
+<h1>.</h1>
+<h4>To Search For Project Managers "PM":</h4>
+<p>
+    @using (Html.BeginForm())
+    {
+    <p>
+        Name: @Html.TextBox("searchstring")
+        <input type="submit" value="Search" />
+    </p>
+    }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                <h4>UserName</h4>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.JobRole == "PM")
+            {
+                <tr>
+                    <td>
+
+                        @Html.DisplayFor(modelItem => item.UserName)
+
+                    </td>
+                </tr>
+            }
+
+        }
+        @Html.ActionLink("Back", "CreateTeam")
+    </table>
+

@@ -1,0 +1,76 @@
+﻿@*Modal Dialog Container *@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/styleHome.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Content/script.js"></script>
+    <title>@ViewBag.Title</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+  <!--NavBar-->
+    
+       
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand" color="#faf6f6" padding="12px"><img width="30px" height="30px" src="~/img/logo5.png" />RE</a>
+               
+                </div>
+                <div id="navbar1" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Home")</li>
+                        <li>@Html.ActionLink("About", "About")</li>
+                        <li>@Html.ActionLink("Contact", "Contact")</li>
+                        </ul>
+                    <!--partial-login-->
+
+                    @Html.Partial("_Login")
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+       
+           
+            </div>
+          </div>
+        <!--footer-->
+        
+            <footer class=" navbar navbar-fixed-bottom myfooter">
+
+                <div class=" container subfooter">
+                    <p class="text-center">all rights recireved © 2019</p>
+                    <div class="container text-center">
+                        <a href="https://www.facebook.com"><img src="~/img/facebook.png" width="20px" height="20px" /></a>
+                        <a href="https://www.twitter.com"><img src="~/img/twiiter.png" width="20px" height="20px"></a>
+                        <a href="https://www.youtube.com"><img src="~/img/youtube.png" width="20px" height="20px"></a>
+                    </div>
+                </div>
+            </footer>
+       
+    
+    <!--footer-->
+    <!-- start popup sign in-->
+    <div id="windowpopup">
+        <div id="wpcontent">
+            @RenderBody();
+
+        </div>
+        <!-- end popup sign in-->
+    </div>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
+          

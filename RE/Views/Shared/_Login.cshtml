@@ -1,0 +1,25 @@
+﻿ 
+
+@if (Session["ID"] != null)
+ {
+     using (Html.BeginForm("Logout", "HomePage", FormMethod.Post, new { id = "logout" }))
+     {
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                 @Html.ActionLink("welcome " + Session["UserName"] + " 😁 ","Loggedin", "HomePage")
+            </li>
+            <li>
+                <a href="javascript:document.getElementById('logout').submit() ">Logout</a>
+            </li>
+        </ul>
+     }
+ }
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Login", "Login")</li>
+        <li>@Html.ActionLink("Register", "Register")</li>
+    </ul>
+}
+ 
+ 

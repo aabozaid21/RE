@@ -1,0 +1,24 @@
+﻿@model IEnumerable<RE.Models.Project>
+
+
+<h2>PieCart</h2>
+@{ int x = 0; }
+@foreach (var item in Model)
+{
+    if (item.PMName == @Session["UserName"].ToString() && item.JEAccept == true && item.Delivered == true && item.PMAccept == true && item.TLAccept == true && item.Assign == true)
+    {
+        x++;
+    }
+}
+@{
+    var myChart = new Chart(width: 600, height: 400)
+        .AddTitle("Statistical Diagram")
+        .AddSeries(
+            name: "Projects",
+            xValue: new[] { "Projects" },
+            yValues: new[] { x });
+    if (myChart != null)
+    {
+        myChart.Write();
+    }
+}
